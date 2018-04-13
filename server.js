@@ -1,26 +1,24 @@
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var compression = require('compression');
-var methodOverride = require('method-override');
-var session = require('express-session');
-var flash = require('express-flash');
-var bodyParser = require('body-parser');
-var expressValidator = require('express-validator');
-var dotenv = require('dotenv');
-var exphbs = require('express-handlebars');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const compression = require('compression');
+const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+const dotenv = require('dotenv');
+const exphbs = require('express-handlebars');
 
 // Load environment variables from .env file
 dotenv.load();
 
 // Controllers
-var HomeController = require('./controllers/home');
-var contactController = require('./controllers/contact');
+const HomeController = require('./controllers/home');
+const contactController = require('./controllers/contact');
 
-var app = express();
+const app = express();
 
 
-var hbs = exphbs.create({
+const hbs = exphbs.create({
   defaultLayout: 'main',
   helpers: {
     ifeq: function(a, b, options) {
@@ -44,8 +42,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(methodOverride('_method'));
-app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
-app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', HomeController.index);
