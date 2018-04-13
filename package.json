@@ -5,7 +5,6 @@
   "scripts": {
     "build": "npm-run-all build:*",
     "build:css": "node-sass public/css/main.scss > public/css/main.css",
-    "deploy": "npm test && git push heroku master",
     "postinstall": "npm run build",
     "start": "node server.js",
     "test": "mocha",
@@ -13,27 +12,24 @@
     "watch:css": "nodemon -e scss -w public/css -x npm run build:css"
   },
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "compression": "^1.6.2",
-    "dotenv": "^2.0.0",
-    "express": "^4.13.4",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "express-validator": "^2.20.4",
-    "method-override": "^2.3.5",
-    "morgan": "^1.7.0",
-    "node-sass": "^3.6.0",
-    "nodemailer": "^2.3.0",
-    "nodemon": "^1.9.1",
-    "npm-run-all": "^1.8.0"
+    "express-validator": "^5.1.2",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.8.3",
+    "nodemailer": "^4.6.4",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "sinon": "^1.17.3",
-    "sinon-chai": "^2.8.0",
-    "supertest": "^1.2.0"
-  },
-  "engines": {
-    "node": "6.1.0"
+    "chai": "^4.1.2",
+    "mocha": "^5.1.0",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
+    "supertest": "^3.0.0"
   }
 }
