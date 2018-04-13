@@ -1,12 +1,6 @@
 lib-cov
 *.seed
 *.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-*.swp
 
 pids
 logs
@@ -19,7 +13,6 @@ coverage
 
 # Dependency directory
 node_modules
-bower_components
 
 # Editors
 .idea
