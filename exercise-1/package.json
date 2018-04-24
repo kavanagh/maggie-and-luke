@@ -1,0 +1,8 @@
+{
+  "name": "exercise-1",
+  "private": true,
+  "scripts": {
+    "start": "node server",
+    "test": "node test"
+  }
+}
